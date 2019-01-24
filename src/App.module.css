@@ -1,9 +1,4 @@
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
+.header {
   background-color: #282c34;
   display: flex;
   flex-direction: column;
@@ -14,7 +9,7 @@
   padding: 30px;
 }
 
-.App-header > h2 {
+.title {
   font-size: calc(10px + 1vmin);
 }
 
@@ -22,11 +17,3 @@
   color: #61dafb;
 }
 
-.select {
-  display: block;
-}
-
-.select select {
-  display: block;
-  width: 100%;
-}

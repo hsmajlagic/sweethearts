@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './Home.module.css';
 import Game from '../utils/game.js';
+import constants from '../utils/constants.js'
 
 export default class Home extends Component {
   constructor(props) {
@@ -14,7 +15,8 @@ export default class Home extends Component {
     gender: 'unspecified',
     eyeColor: 'unspecified',
     age: 22,
-    place: ''
+    place: '',
+    personality: ''
   }
 
   stateChange(e) {
@@ -43,8 +45,8 @@ export default class Home extends Component {
             <div className="select">
               <select name="gender" value={this.state.gender} onChange={this.stateChange}>
                 <option value='unspecified'>Unspecified</option>
-                <option value='male'>Male</option>
-                <option value='female'>Female</option>
+                <option className="normalCase" value={constants.FORM.GENDER.MALE}>{constants.FORM.GENDER.MALE}</option>
+                <option className="normalCase" value={constants.FORM.GENDER.FEMALE}>{constants.FORM.GENDER.FEMALE}</option>
               </select>
             </div>
           </div>
@@ -54,11 +56,11 @@ export default class Home extends Component {
           <div className="control">
             <div className="select">
               <select name="eyeColor" value={this.state.eyeColor} onChange={this.stateChange}>
-                <option>Other</option>
-                <option>Blue</option>
-                <option>Green</option>
-                <option>Brown</option>
-                <option>Black</option>
+                <option value="other">other</option>
+                <option className="normalCase" value={constants.FORM.COLORS.BLUE}>{constants.FORM.COLORS.BLUE}</option>
+                <option className="normalCase" value={constants.FORM.COLORS.GREEN}>{constants.FORM.COLORS.GREEN}</option>
+                <option className="normalCase" value={constants.FORM.COLORS.BROWN}>{constants.FORM.COLORS.BROWN}</option>
+                <option className="normalCase" value={constants.FORM.COLORS.BLACK}>{constants.FORM.COLORS.BLACK}</option>
               </select>
             </div>
           </div>
@@ -73,12 +75,25 @@ export default class Home extends Component {
           <label className="label">Where do you live?</label>
           <div className="control">
             <label className="radio">
-              <input type="radio" name="place" />
-              Apartment
+              <input type="radio" name="place" value={constants.FORM.PLACES.APARTMENT} checked={this.state.place === constants.FORM.PLACES.APARTMENT} onChange={this.stateChange} />
+              <span className='normalCase'>{constants.FORM.PLACES.APARTMENT}</span>
             </label>
             <label className="radio">
-              <input type="radio" name="place" />
-              House
+              <input type="radio" name="place" value={constants.FORM.PLACES.HOUSE} checked={this.state.place === constants.FORM.PLACES.HOUSE} onChange={this.stateChange} />
+              <span className='normalCase'>{constants.FORM.PLACES.HOUSE}</span>
+            </label>
+          </div>
+        </div>
+        <div className="field">
+          <label className="label">What is your personality?</label>
+          <div className="control">
+            <label className="radio">
+              <input type="radio" name="personality" value={constants.FORM.PERSONALITIES.INTROVERT} checked={this.state.place === constants.FORM.PERSONALITIES.INTROVERT} onChange={this.stateChange} />
+              <span className='normalCase'>{constants.FORM.PERSONALITIES.INTROVERT}</span>
+            </label>
+            <label className="radio">
+              <input type="radio" name="personality" value={constants.FORM.PERSONALITIES.EXTROVERT} checked={this.state.place === constants.FORM.PERSONALITIES.EXTROVERT} onChange={this.stateChange} />
+              <span className='normalCase'>{constants.FORM.PERSONALITIES.EXTROVERT}</span>
             </label>
           </div>
         </div>

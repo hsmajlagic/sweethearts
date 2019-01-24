@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import './App.css';
+import styles from './App.module.css';
 import Home from './pages/Home.js'
 import Result from './pages/Result.js'
 
@@ -23,10 +23,10 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Dog or Cat</h1>
-            <h2>Find out if you're a dog or cat person</h2>
+        <div>
+          <header className={styles.header}>
+            <h1>Dog or Cat</h1>
+            <h2 className={styles.title}>Find out if you're a dog or cat person</h2>
           </header>
           <div>
             <Route exact path="/" component={Home} />
