@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './Home.module.css';
+import Game from '../utils/game.js';
 
 export default class Home extends Component {
   constructor(props) {
@@ -12,7 +13,8 @@ export default class Home extends Component {
     firstName: '',
     gender: 'unspecified',
     eyeColor: 'unspecified',
-    age: 22
+    age: 22,
+    place: ''
   }
 
   stateChange(e) {
@@ -22,7 +24,8 @@ export default class Home extends Component {
   }
 
   showResult() {
-    this.props.history.push('/result', { data: this.state, result: 'DOG' })
+    let game = new Game(this.state);
+    this.props.history.push('/result', { data: this.state, result: game.calculateResult() })
   }
 
   render() {

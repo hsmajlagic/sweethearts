@@ -45,8 +45,8 @@ export default class Result extends Component {
           <img className={styles.image} src={this.state.url} alt={this.state.alt} />
         </div>
         <div className={styles.footer}>
-          <Link className="button is-danger is-large" to="/">Try again</Link>
-          <button className="button is-link is-large" onClick={this.shareResult}>Share on FB</button>
+          <Link className={`button is-danger is-large ${styles.button}`} to="/">Try again</Link>
+          <button className={`button is-link is-large ${styles.button}`} onClick={this.shareResult}>Share on FB</button>
         </div>
       </div>
     )
