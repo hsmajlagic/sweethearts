@@ -14,7 +14,7 @@ export default class Home extends Component {
     firstName: '',
     gender: 'unspecified',
     eyeColor: 'unspecified',
-    age: 22,
+    age: 23,
     place: '',
     personality: ''
   }
@@ -44,7 +44,7 @@ export default class Home extends Component {
           <div className="control">
             <div className="select">
               <select name="gender" value={this.state.gender} onChange={this.stateChange}>
-                <option value='unspecified'>Unspecified</option>
+                <option value='unspecified'>unspecified</option>
                 <option className="normalCase" value={constants.FORM.GENDER.MALE}>{constants.FORM.GENDER.MALE}</option>
                 <option className="normalCase" value={constants.FORM.GENDER.FEMALE}>{constants.FORM.GENDER.FEMALE}</option>
               </select>
@@ -88,17 +88,17 @@ export default class Home extends Component {
           <label className="label">What is your personality?</label>
           <div className="control">
             <label className="radio">
-              <input type="radio" name="personality" value={constants.FORM.PERSONALITIES.INTROVERT} checked={this.state.place === constants.FORM.PERSONALITIES.INTROVERT} onChange={this.stateChange} />
+              <input type="radio" name="personality" value={constants.FORM.PERSONALITIES.INTROVERT} checked={this.state.personality === constants.FORM.PERSONALITIES.INTROVERT} onChange={this.stateChange} />
               <span className='normalCase'>{constants.FORM.PERSONALITIES.INTROVERT}</span>
             </label>
             <label className="radio">
-              <input type="radio" name="personality" value={constants.FORM.PERSONALITIES.EXTROVERT} checked={this.state.place === constants.FORM.PERSONALITIES.EXTROVERT} onChange={this.stateChange} />
+              <input type="radio" name="personality" value={constants.FORM.PERSONALITIES.EXTROVERT} checked={this.state.personality === constants.FORM.PERSONALITIES.EXTROVERT} onChange={this.stateChange} />
               <span className='normalCase'>{constants.FORM.PERSONALITIES.EXTROVERT}</span>
             </label>
           </div>
         </div>
         <div className="field">
-          <div className="control">
+          <div className={`control ${styles.button}`}>
             <button className="button is-primary" onClick={this.showResult}>Tell me!</button>
           </div>
         </div>

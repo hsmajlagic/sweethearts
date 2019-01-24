@@ -2,3 +2,8 @@
   max-width: 360px;
   margin: 40px auto;
 }
+
+.button {
+  padding: 20px 0;
+  text-align: center;
+}
