@@ -1,0 +1,22 @@
+
+.resultTitle {
+  font-size: calc(10px + 2vmin);
+  margin: 40px 0;
+  text-align: center;
+}
+
+.resultImageContainer {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.resultFooter {
+  text-align: center;
+  padding: 40px 0;
+}

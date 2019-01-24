@@ -22,7 +22,7 @@ export default class Home extends Component {
   }
 
   showResult() {
-    this.props.history.push('/result', { id: 7, color: 'green' })
+    this.props.history.push('/result', { data: this.state, result: 'DOG' })
   }
 
   render() {
