@@ -1,11 +1,11 @@
 
-.resultTitle {
+.title {
   font-size: calc(10px + 2vmin);
   margin: 40px 0;
   text-align: center;
 }
 
-.resultImageContainer {
+.container {
   width: 100%;
   max-width: 360px;
   margin: 0 auto;
@@ -16,7 +16,7 @@
   height: auto;
 }
 
-.resultFooter {
+.footer {
   text-align: center;
   padding: 40px 0;
 }
