@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
-import Home from './components/Home.js'
-import Result from './components/Result.js'
+import Home from './pages/Home.js'
+import Result from './pages/Result.js'
 
 class App extends Component {
   componentDidMount() {
