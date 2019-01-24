@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
+import Home from './components/Home.js'
+import Result from './components/Result.js'
 
 class App extends Component {
   componentDidMount() {
@@ -17,24 +19,21 @@ class App extends Component {
       alert('Facebook Instant Game SDK failed to load.');
     }
   }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">Dog or Cat</h1>
+            <h2>Find out if you're a dog or cat person</h2>
+          </header>
+          <div>
+            <Route exact path="/" component={Home} />
+            <Route path="/result" component={Result} />
+          </div>
+        </div>
+      </Router>
     );
   }
 }
