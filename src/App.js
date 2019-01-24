@@ -3,6 +3,20 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  componentDidMount() {
+    if (typeof FBInstant !== 'undefined') {
+      let FBInstant = window.FBInstant
+      FBInstant.initializeAsync()
+        .then(function() {
+          FBInstant.startGameAsync()
+            .then(function() {
+
+          });
+      });
+    } else {
+      alert('Facebook Instant Game SDK failed to load.');
+    }
+  }
   render() {
     return (
       <div className="App">
